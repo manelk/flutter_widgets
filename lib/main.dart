@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       /// body: the primary content of the scaffold, here we used a container widget
       /// This example uses a Column to arrange three widgets vertically ⬇,
       body: const Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Text('Deliver features faster'),
           Text('Craft beautiful UIs'),
