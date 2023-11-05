@@ -1,73 +1,75 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() => runApp(const AnimatedContainerApp());
+
+class AnimatedContainerApp extends StatefulWidget {
+  const AnimatedContainerApp({super.key});
+
+  @override
+  State<AnimatedContainerApp> createState() => _AnimatedContainerAppState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  
-  // This widget is the root of your application.
+class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
+  // Define the various properties with default values. Update these properties
+  // when the user taps a FloatingActionButton.
+  double _width = 50;
+  double _height = 50;
+  Color _color = Colors.green;
+  BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    /// Scaffold; high-level structure for a screen
-    /// Provides AppBar and body property as used in this code
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      /// body: the primary content of the scaffold, here we used a container widget
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('AnimatedContainer Demo'),
+        ),
+        body: Center(
+          child: AnimatedContainer(
+            // Use the properties stored in the State class.
+            width: _width,
+            height: _height,
+            decoration: BoxDecoration(
+              color: _color,
+              borderRadius: _borderRadius,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+            // Define how long the animation should take.
+            duration: const Duration(seconds: 1),
+            // Provide an optional curve to make the animation feel smoother.
+            curve: Curves.fastOutSlowIn,
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          // When the user taps the button
+          onPressed: () {
+            // Use setState to rebuild the widget with new values.
+            setState(() {
+              // Create a random number generator.
+              final random = Random();
+
+              // Generate a random width and height.
+              _width = random.nextInt(300).toDouble();
+              _height = random.nextInt(300).toDouble();
+
+              // Generate a random color.
+              _color = Color.fromRGBO(
+                random.nextInt(256),
+                random.nextInt(256),
+                random.nextInt(256),
+                1,
+              );
+
+              // Generate a random border radius.
+              _borderRadius =
+                  BorderRadius.circular(random.nextInt(100).toDouble());
+            });
+          },
+          child: const Icon(Icons.play_arrow),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
