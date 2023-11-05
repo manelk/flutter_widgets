@@ -1,3 +1,7 @@
+/// Dismissible class:
+/// A widget that can be dismissed by dragging in the indicated direction.
+/// Link: https://api.flutter.dev/flutter/widgets/Dismissible-class.html
+
 import 'package:flutter/material.dart';
 
 class ListViewExample4 extends StatefulWidget {

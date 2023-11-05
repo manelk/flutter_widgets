@@ -1,5 +1,6 @@
 /// creating a list using ListView.separated.
 /// Here, a Divider is used as a separator.
+/// Link: https://api.flutter.dev/flutter/widgets/ListView-class.html
 
 import 'package:flutter/material.dart';
 
