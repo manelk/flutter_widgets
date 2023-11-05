@@ -5,4 +5,5 @@ This repository is created for educational purposes to showcase examples of comm
 <ol>
   <li><a href="https://api.flutter.dev/flutter/widgets/Container-class.html">Container widget</a></li>
   <li><a href="https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html">Animated container widget</a></li>
+  <li><a href="https://api.flutter.dev/flutter/widgets/Column-class.html">Column widget</a></li>
 </ul>
