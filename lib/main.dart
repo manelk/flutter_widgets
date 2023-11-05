@@ -49,12 +49,67 @@ class _MyHomePageState extends State<MyHomePage> {
           Text('Deliver features faster'),
           Text('Craft beautiful UIs'),
 
-          /// Expanded: a widget that expands a child of a Row, Column, or Flex so that the child fills the available space.
-          Expanded(
-            child: FittedBox(
-              child: FlutterLogo(),
-            ),
-          ),
+          /// 1. See this error together: Vertical viewport was given unbounded height.
+          /// Uncomment the ListView
+          // ListView(
+          //   padding: const EdgeInsets.all(8),
+          //   children: <Widget>[
+          //     Container(
+          //       height: 50,
+          //       color: Colors.amber[600],
+          //       child: const Center(child: Text('Entry A')),
+          //     ),
+          //     Container(
+          //       height: 50,
+          //       color: Colors.amber[500],
+          //       child: const Center(child: Text('Entry B')),
+          //     ),
+          //     Container(
+          //       height: 50,
+          //       color: Colors.amber[100],
+          //       child: const Center(child: Text('Entry C')),
+          //     ),
+          //   ],
+          // ),
+
+          /// 2. Solve it using expanded
+          // Expanded(
+          //   child: ListView(
+          //     padding: const EdgeInsets.all(8),
+          //     children: <Widget>[
+          //       Container(
+          //         height: 100,
+          //         color: Colors.amber[600],
+          //         child: const Center(child: Text('Entry A')),
+          //       ),
+          //       Container(
+          //         height: 100,
+          //         color: Colors.amber[500],
+          //         child: const Center(child: Text('Entry B')),
+          //       ),
+          //       Container(
+          //         height: 100,
+          //         color: Colors.amber[100],
+          //         child: const Center(child: Text('Entry C')),
+          //       ),
+          //       Container(
+          //         height: 100,
+          //         color: Colors.amber[100],
+          //         child: const Center(child: Text('Entry C')),
+          //       ),
+          //       Container(
+          //         height: 100,
+          //         color: Colors.amber[100],
+          //         child: const Center(child: Text('Entry C')),
+          //       ),
+          //       Container(
+          //         height: 100,
+          //         color: Colors.amber[100],
+          //         child: const Center(child: Text('Entry C')),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
