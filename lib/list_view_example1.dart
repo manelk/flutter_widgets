@@ -1,3 +1,6 @@
+/// creating a list using the ListView.builder constructor
+/// Using the IndexedWidgetBuilder, children are built lazily and can be infinite in number.
+
 import 'package:flutter/material.dart';
 
 class ListViewExample1 extends StatelessWidget {
