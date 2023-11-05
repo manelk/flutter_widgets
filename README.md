@@ -1,16 +1,8 @@
-# flutter_widgets
+# About "flutter widgets" repository:
+This repository is created for educational purposes to showcase examples of common, interesting, and useful widgets in Flutter! 🚀
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Widgets mentioned in this repository and links to source code 
+<ol>
+  <li><a href="https://api.flutter.dev/flutter/widgets/Container-class.html">Container widget</a></li>
+  <li><a href="https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html">Animated container widget</a></li>
+</ul>
