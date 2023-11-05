@@ -6,7 +6,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -32,43 +32,50 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     /// Scaffold; high-level structure for a screen
     /// Provides AppBar and body property as used in this code
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      /// body: the primary content of the scaffold, here we used a container widget
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title),
+        ),
+
+        /// body: the primary content of the scaffold, here we used a container widget
+        body: Stack(
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.red,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Container(
+              width: 150,
+              height: 150,
+              color: Colors.green,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.blue,
+            ),
+            const Positioned(
+              top: 80,
+              left: 30,
+              child: Text(
+                "Random text",
+                style: TextStyle(fontSize: 10),
+              ),
+            ),
+            const Positioned(
+              top: 0,
+              left: 0,
+              height: 35,
+              width: 35,
+              child: FlutterLogo(),
             ),
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        ));
   }
 }
