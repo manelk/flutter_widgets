@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'list_view_example1.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -37,31 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
     /// Scaffold; high-level structure for a screen
     /// Provides AppBar and body property as used in this code
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
-        ),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
 
-        /// body: the primary content of the scaffold, here we used a container widget
-        body: ListView(
-          padding: const EdgeInsets.all(8),
-          children: <Widget>[
-            Container(
-              height: 50,
-              color: Colors.amber[600],
-              child: const Center(child: Text('Entry A')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[500],
-              child: const Center(child: Text('Entry B')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[100],
-              child: const Center(child: Text('Entry C')),
-            ),
-          ],
-        ));
+      /// body: the primary content of the scaffold, here we used a container widget
+      body: ListViewExample1(),
+    );
   }
 }
