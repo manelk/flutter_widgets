@@ -1,3 +1,4 @@
+/// Type: Static ListView => ListView only with ListTile
 /// ListTile: A single fixed-height row that typically contains
 /// some text as well as a leading or trailing icon.
 /// Link: https://docs.flutter.dev/cookbook/lists/basic-list
